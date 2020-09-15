@@ -6,13 +6,19 @@ description: |
   A snap package for tcpdump/libpcap
 
 grade: devel 
-confinement: devmode
+confinement: strict
 
 apps:
   tcpdump:
      command: sbin/tcpdump
      plugs:
        - network
+       - network-bind 
+       - network-observe
+       - network-control
+       - netlink-connector
+       - network-manager
+       - modem-manager
 
 parts:
   libpcap:
