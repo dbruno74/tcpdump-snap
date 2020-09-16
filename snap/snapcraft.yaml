@@ -1,24 +1,20 @@
 name: tcpdump-snap
 base: core18 # the base snap is the execution environment for this snap
-version: '0.1' 
+version: '1.0' 
 summary: tcpdump packet analyser
 description: |
   A snap package for tcpdump/libpcap
 
-grade: devel 
+grade: stable 
 confinement: strict
 
 apps:
   tcpdump:
      command: sbin/tcpdump
      plugs:
-       - network
-       - network-bind 
-       - network-observe
        - network-control
-       - netlink-connector
-       - network-manager
-       - modem-manager
+       - hardware-observe
+       - firewall-control
 
 parts:
   libpcap:
