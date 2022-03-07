@@ -1,5 +1,5 @@
 name: tcpdump-snap
-base: core18 # the base snap is the execution environment for this snap
+base: core20 # the base snap is the execution environment for this snap
 version: '1.0' 
 summary: tcpdump packet analyser
 description: |
